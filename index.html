@@ -1144,7 +1144,7 @@
           <span class="stat-label">IEEE Papers Communicated</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">5+</span>
+          <span class="stat-num">6+</span>
           <span class="stat-label">AI Systems Built & Deployed</span>
         </div>
         <div class="stat-item">
@@ -1211,7 +1211,7 @@
   <div class="container">
     <div class="section-label">Featured Projects</div>
     <h2 class="section-title">Systems I've shipped.</h2>
-    <p class="section-sub">Two full-stack AI products — real architecture decisions, real deployment, real trade-offs.</p>
+    <p class="section-sub">Three full-stack products — real architecture decisions, real APIs, real testing, real trade-offs.</p>
 
     <!-- PROJECT 1 -->
     <div class="project-featured reveal">
@@ -1414,6 +1414,103 @@
         <span style="font-size:0.78rem; color:var(--ink3);">Deployment in progress — Railway</span>
       </div>
     </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-featured reveal">
+      <div class="project-header">
+        <div>
+          <span class="project-number">Project 03</span>
+          <h3 class="project-title">Library Book Reservation System</h3>
+          <p class="project-subtitle">FastAPI · React · SQLite · OpenAPI SDK · Pytest · Playwright</p>
+        </div>
+        <div class="project-badges">
+          <span class="badge badge-built">79 Tests Passing</span>
+          <span class="badge badge-dev">Hiring Challenge</span>
+        </div>
+      </div>
+
+      <div class="project-body">
+        <div class="project-col">
+          <div class="project-col-title">What it does</div>
+          <p class="project-description">
+            A full-stack library reservation platform built as a hiring challenge. Users browse books, make reservations with 30-minute auto-expiry timers, and track status through a clean React UI. Librarians manage books and reservations through a role-restricted admin panel — all backed by a FastAPI REST API with Pydantic validation, SQLite, and a Python SDK generated from the OpenAPI spec.
+          </p>
+          <div class="project-highlight">
+            The backend enforces a strict state machine: Pending → Confirmed → Cancelled/Completed. Invalid transitions are rejected with 400 errors — a classic trick requirement.
+          </div>
+
+          <div style="margin-top:28px">
+            <div class="project-col-title">Key Engineering Details</div>
+            <div class="project-metrics">
+              <div class="metric-item">
+                <span class="metric-value">79</span>
+                <span class="metric-label">Pytest backend tests (100% pass)</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">9</span>
+                <span class="metric-label">Playwright E2E UI tests</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">Auto</span>
+                <span class="metric-label">SDK generated via OpenAPI Generator CLI</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-value">30m</span>
+                <span class="metric-label">Reservation auto-expiry timer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-col">
+          <div class="project-col-title">System Architecture</div>
+          <div class="pipeline-steps">
+            <div class="pipeline-step">
+              <span class="pipeline-num">1</span>
+              <p class="pipeline-text"><strong>FastAPI Backend</strong> — 12 REST endpoints with Pydantic v2 schemas, JWT auth, role-based access (user / librarian)</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="pipeline-num">2</span>
+              <p class="pipeline-text"><strong>State Machine</strong> — Reservation lifecycle enforced server-side: Pending → Confirmed → Cancelled / Completed; invalid transitions return 400</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="pipeline-num">3</span>
+              <p class="pipeline-text"><strong>OpenAPI SDK</strong> — Python client auto-generated from the live OpenAPI spec using openapi-generator-cli; no manual client coding</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="pipeline-num">4</span>
+              <p class="pipeline-text"><strong>React Frontend</strong> — Vite + React with real-time reserve/cancel UX, faded button states, and auto-expiry countdown display</p>
+            </div>
+            <div class="pipeline-step">
+              <span class="pipeline-num">5</span>
+              <p class="pipeline-text"><strong>Testing</strong> — 79 Pytest unit + integration tests + 9 Playwright end-to-end UI tests covering all critical user flows</p>
+            </div>
+          </div>
+
+          <div style="margin-top:24px">
+            <div class="project-col-title">Tech Stack</div>
+            <div class="tech-list" style="margin-top:8px">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Pydantic v2</span>
+              <span class="tech-tag">SQLite</span>
+              <span class="tech-tag">React (Vite)</span>
+              <span class="tech-tag">OpenAPI Generator</span>
+              <span class="tech-tag">Pytest</span>
+              <span class="tech-tag">Playwright</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-footer">
+        <a href="https://github.com/Gokulkrishnar10/Library-Book-Reservation-System" target="_blank" class="project-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Code
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1572,6 +1669,7 @@
     <h2 class="section-title">Published & ongoing work.</h2>
     <p class="section-sub">Two IEEE papers communicated. One ongoing research targeting high-impact journals.</p>
 
+
     <div class="research-list">
 
       <div class="research-item reveal">
@@ -1591,22 +1689,7 @@
         </div>
       </div>
 
-      <div class="research-item reveal">
-        <div class="research-meta">
-          <span class="research-venue">IEEE — Communicated</span>
-          <span class="research-status status-communicated">Under Review</span>
-        </div>
-        <h3 class="research-title">Gaussian Similarity Loss for Aerial UAV Livestock Detection</h3>
-        <p class="research-desc">
-          Integrated a custom Gaussian Similarity Loss (GSL) into YOLOv10n on a 124,879-annotation aerial dataset. Achieved +0.26% mAP@0.5:0.95 improvement and 40% reduction in livestock counting error at 67.2 GPU FPS. Three-model comparative evaluation: YOLOv10n Baseline, GSL variant, YOLOv11n.
-        </p>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:14px">
-          <span class="research-highlight">124,879 annotations</span>
-          <span class="research-highlight">40% counting error reduction</span>
-          <span class="research-highlight">67.2 GPU FPS</span>
-          <a href="https://github.com/Gokulkrishnar10/Gaussian-Similarity-Loss-for-Enhanced-Localization-in-Aerial-sheep-Detection-with-YOLOv10" target="_blank" class="research-highlight" style="text-decoration:none; border-color:var(--accent); color:var(--accent);">GitHub →</a>
-        </div>
-      </div>
+
 
       <div class="research-item reveal">
         <div class="research-meta">
@@ -1645,6 +1728,18 @@
             <div class="cert-item">Data Analytics with Excel — Amrita Vishwa Vidyapeetham (Feb 2024)</div>
           </div>
         </div>
+      </div>
+
+      <div class="intern-card" style="margin-bottom:28px">
+        <h3 class="intern-role">AI / ML Intern</h3>
+        <p class="intern-company">Webmobi360</p>
+        <p class="intern-period">Jul 2026 – Oct 2026 · Pune, India</p>
+        <ul class="intern-points">
+          <li><strong>CRM AI Agent:</strong> Built a 5-step lead analysis pipeline (lead intake → intent analysis → LLM recommendation via Groq/Cerebras → sales rep review → CRM update), requiring human approval before outreach.</li>
+          <li><strong>AI Mentor &amp; Mock Interview Tool:</strong> Express.js + React + Groq LLMs; voice interview room scoring answers across technical accuracy, problem-solving, and communication.</li>
+          <li><strong>Readiness Score &amp; Role Matcher:</strong> Interview readiness score 0–100 with 7-day inactivity decay; Groq LLM maps job titles to 15 role tracks, backed by 18 unit tests.</li>
+          <li><strong>FastAPI / Prisma Backend:</strong> Pydantic resume parser, server-side answer-key protection, async XP/streak rewards system.</li>
+        </ul>
       </div>
 
       <div class="intern-card">
